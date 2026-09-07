@@ -1,1 +1,77 @@
+EXECPTION DAY 1 (7/9/2026)
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+example 1 : 
+-------------------------------------------------------------------------------------------------------
+package myWorkSpace;
+
+import java.util.Scanner;
+
+//import com.sun.java_cup.internal.runtime.Scanner;
+
+public class Demo {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter Numerator : ");
+		Integer num1 = Integer.parseInt(sc.nextLine());
+		
+		System.out.println("Enter Denominator : ");
+		Integer num2 = Integer.parseInt(sc.nextLine());
+		
+		try {
+			Integer result = num1/num2;
+			System.out.println("Result : "+result);
+		}
+		catch(Exception e )
+		{
+			System.out.println("Invalid Output");
+		}
+	}
+
+}
+
+-------------------------------------------------------------------------------------------------------
+
+example 2 : 
+-------------------------------------------------------------------------------------------------------
+package myWorkSpace;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+//import com.sun.java_cup.internal.runtime.Scanner;
+
+public class Demo {
+
+	public static void main(String[] args) {
+		
+		
+		try {
+			Scanner sc = new Scanner(System.in);
+			
+			System.out.println("Enter Numerator : ");
+			Integer num1 = Integer.parseInt(sc.nextLine());
+			
+			System.out.println("Enter Denominator : ");
+			Integer num2 = Integer.parseInt(sc.nextLine());
+			
+			Integer result = num1/num2;
+			System.out.println("Result : "+result);
+		}
+		catch(ArithmeticException e )
+		{
+			System.out.println("Invalid Denominator Donot Provide Zero");
+		}
+		catch (NumberFormatException e) {
+			System.out.println("Do Not Enter Alphabets. Enter Only Numbers");
+		}
+	}
+
+}
+
+-------------------------------------------------------------------------------------------------------
+Example 3 
+-------------------------------------------------------------------------------------------------------
 
