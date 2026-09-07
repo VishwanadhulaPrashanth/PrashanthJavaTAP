@@ -74,4 +74,46 @@ public class Demo {
 -------------------------------------------------------------------------------------------------------
 Example 3 
 -------------------------------------------------------------------------------------------------------
+package myWorkSpace;
 
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+//import com.sun.java_cup.internal.runtime.Scanner;
+
+public class Demo {
+
+	public static void main(String[] args) {
+		
+		int arrSize= 5;
+		
+		int arr[] = new int[arrSize];
+		System.out.println("Array Created");
+	}
+
+}
+
+-------------------------------------------------------------------------------------------------------
+Example 4 
+-------------------------------------------------------------------------------------------------------
+package myWorkSpace;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+//import com.sun.java_cup.internal.runtime.Scanner;
+
+public class Demo {
+
+	public static void main(String[] args) {
+		
+		int arrSize= Integer.MAX_VALUE;
+		
+		int arr[] = new int[arrSize];
+		System.out.println("Array Created");
+	}
+
+}
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
