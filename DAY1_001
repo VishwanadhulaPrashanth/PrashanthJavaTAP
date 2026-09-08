@@ -197,3 +197,46 @@ public class Demo {
 	}
 }
 
+-------------------------------------------------------------------------------------------------------
+Example 8
+-------------------------------------------------------------------------------------------------------
+
+
+package myWorkSpace;
+
+import java.util.Scanner;
+
+//Ducking the exception
+public class Demo {
+
+	public static void main(String[] args) {
+		System.out.println("main Method Conn Estd");
+
+		try
+		{
+			Demo d = new Demo();
+			d.fun1();
+		}
+		catch(Exception e )
+		{
+			System.out.println("Exception Handled In Main");
+		}
+		System.out.println("main method Conn Dis");
+	}
+
+	void fun1() throws Exception{
+
+		System.out.println("fun1 Method Conn Estd");
+
+		int a = 10;
+		int b = 0;
+
+		int result = a / b;
+
+		System.out.println(result);
+
+		System.out.println("fun1 Method Disc");
+		
+	}
+}
+
