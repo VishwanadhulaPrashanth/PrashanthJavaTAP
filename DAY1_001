@@ -136,3 +136,64 @@ public class Demo {
 -------------------------------------------------------------------------------------------------------
 Example 6 
 -------------------------------------------------------------------------------------------------------
+
+
+
+
+-------------------------------------------------------------------------------------------------------
+Example 7 
+-------------------------------------------------------------------------------------------------------
+package myWorkSpace;
+
+import java.util.Scanner;
+
+//rethrowing the exception
+public class Demo {
+
+	public static void main(String[] args) {
+		System.out.println("main Method Conn Estd");
+		
+		Demo d1 = new Demo();
+		try {
+			d1.fun1();
+		} catch (Exception e) {
+						System.out.println("Handled In Main");
+		}
+		
+		System.out.println("main method Conn Dis");
+	}
+	
+	void fun1() throws Exception
+	{
+		System.out.println("Fun1 method Connected");
+		try
+		{
+			Scanner sc = new Scanner(System.in);
+			
+			System.out.println("Enter Numerator : ");
+			Integer a = Integer.parseInt(sc.nextLine());
+			
+			System.out.println("Enter Denominator : ");
+			Integer b = Integer.parseInt(sc.nextLine());
+			
+			
+			Integer res = a/b;
+			
+			System.out.println(res);
+			
+		}
+		catch(Exception e )
+		{
+			System.out.println("Exception occured And Handled in fun1");
+			throw e;
+		}
+		
+		finally
+		{
+			System.out.println("Fun1 method DisConnected");
+			
+			
+		}
+	}
+}
+
