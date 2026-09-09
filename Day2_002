@@ -1,0 +1,93 @@
+package BankProject;
+//Custom Exception Program
+import java.util.Scanner;
+
+public class ATM {
+	
+	private Integer accNum=1009;
+	private Integer accPass=1234;
+	
+	
+	private Integer a;
+	private Integer b;
+	
+	public void acceptInput()
+	{
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter Account Number : ");
+		a=Integer.parseInt(sc.nextLine());
+		
+		System.out.println("Enter Account Password : ");
+		b=Integer.parseInt(sc.nextLine());
+	}
+	
+	public void validate() throws InvalidUserException
+	{
+		if(a==accNum&&b==accPass)
+		{
+			System.out.println("Cash WithDrawen Successfully....");
+		}
+		else
+		{
+			InvalidUserException iue = new InvalidUserException();
+			System.out.println(iue.getMessage());
+			throw iue;
+		}
+	}
+package BankProject;
+
+public class Bank {
+	
+	public void permit()
+	{
+		ATM a = new ATM();
+		
+		try
+		{
+			a.acceptInput();
+			a.validate();
+//			System.out.println();
+			
+		}
+		catch(Exception e)
+		{
+			try {
+				a.acceptInput();
+				a.validate();
+			} catch (InvalidUserException e1) {
+				a.acceptInput();
+				try {
+					a.validate();
+				} catch (InvalidUserException e2) {
+					System.err.println("Card Blocked");
+				}
+				
+			}
+		}
+	}
+
+}
+package BankProject;
+
+public class InvalidUserException extends Exception{
+	
+	public String getMessage()
+	{
+		return "Invalid Credentails. Please Try Again";
+	}
+
+}
+package BankProject;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Bank b = new Bank();
+		b.permit();
+
+	}
+
+}
+
+}
