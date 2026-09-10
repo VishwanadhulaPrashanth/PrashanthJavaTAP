@@ -32,5 +32,43 @@ public class Demo {
 }
 
 Example 2 :
+package myWorkSpace;
+
+//Single Ton Design Pattern Example 2
+
+class Test
+{
+	static int count;
+	
+	{
+		count++;
+	}
+	
+	static Test t = new Test();
+	
+	public void fun1()
+	{
+		System.out.println("Test.fun1()");
+	}
+	
+	private Test()
+	{
+		
+	}
+	
+	public static Test getTest()
+	{
+		return t;
+	}
+}
+
+public class Demo {
+	public static void main(String[] args) {
+				Test.getTest().fun1();
+				 Test.getTest().fun1();
+				
+				System.out.println(Test.count);
+	}
+}
 
 
