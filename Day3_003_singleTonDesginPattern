@@ -1,0 +1,36 @@
+Example 1 :
+
+package myWorkSpace;
+
+//Single Ton Design Pattern Example 1
+
+
+class Test
+{
+	static int count;
+	
+	public void m1()
+	{
+		System.out.println("m1 method executed");
+	}
+	{
+		count++;
+	}
+}
+public class Demo {
+	public static void main(String[] args) {
+		Test t1 = new Test();
+		
+		
+		Test t2 = new Test();
+		
+		System.out.println(Test.count);
+		
+		
+		
+	}
+}
+
+Example 2 :
+
+
