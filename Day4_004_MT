@@ -239,3 +239,94 @@ public class Demo {
 }
 
 ------------------------------------------------------------------------------------
+
+package myWorkSpace;
+
+import java.util.Scanner;
+
+//Multi_Threading using Single Class and Single run method 
+// Example 4
+
+class singleClass implements Runnable {
+
+	@Override
+	public void run() {
+		Thread t = Thread.currentThread();
+		String name = t.getName();
+
+		if (name.equals("ADD")) {
+			add();
+		} else if (name.equals("CHAR")) {
+			charPrint();
+		}
+
+		else if (name.equals("NUM")) {
+			printNum();
+		}
+
+	}
+
+	public void add() {
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Enter 1st Num : ");
+		Integer a = Integer.parseInt(sc.nextLine());
+
+		System.out.println("Enter 2nd Num : ");
+		Integer b = Integer.parseInt(sc.nextLine());
+
+		System.out.println("Sum : " + (a + b));
+	}
+
+	public void charPrint() {
+		System.out.println("Print Char Started");
+
+		for (int i = 65; i <= 70; i++) {
+			try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			System.out.println((char) i);
+		}
+		System.out.println("Print Char Ended");
+	}
+
+	public void printNum() {
+		System.out.println("Print Num Started");
+
+		for (int i = 1; i <= 5; i++) {
+			try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			System.out.println(i);
+		}
+
+		System.out.println("Print Num Ended");
+	}
+
+}
+
+public class Demo {
+	public static void main(String[] args) {
+
+		singleClass sc = new singleClass();
+
+		Thread t1 = new Thread(sc);
+		Thread t2 = new Thread(sc);
+		Thread t3 = new Thread(sc);
+
+		t1.setName("ADD");
+		t2.setName("CHAR");
+		t3.setName("NUM");
+
+		t1.start();
+		t2.start();
+		t3.start();
+	}
+}
+
