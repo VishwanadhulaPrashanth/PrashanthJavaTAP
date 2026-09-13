@@ -330,3 +330,68 @@ public class Demo {
 	}
 }
 
+-------------------------------------------------
+package demo;
+
+class userThread extends Thread
+{
+	@Override
+	public void run() {
+		System.out.println("User Thread Started");
+		
+		for(int i=1;i<=2;i++)
+		{
+			System.out.println("User Thread Executing");
+			try {
+				Thread.sleep(3000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
+		
+		//System.out.println("User Thread Ended");
+	}
+}
+
+
+class daemonThread extends Thread
+{
+	@Override
+	public void run() {
+		System.out.println("Daemon Thread Started");
+		
+		for(;;)
+		{
+			System.out.println("Daemon Thread Executing");
+			try {
+				Thread.sleep(3000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
+//		System.out.println("User Thread Ended");
+	}
+	
+}
+
+public class Demo {
+
+	public static void main(String[] args) {
+		System.out.println("Main Thread Started");
+		userThread ut = new userThread();
+		ut.start();
+		
+		
+		daemonThread dt = new daemonThread();
+		dt.setDaemon(true);
+		dt.start();
+		System.out.println("Main Thread Ended");
+	}
+
+}
+
+
