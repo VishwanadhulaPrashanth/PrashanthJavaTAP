@@ -1,0 +1,67 @@
+package myWorkSpace;
+
+import java.util.Scanner;
+
+//#004
+//wasting Time Of CPU
+
+class Test
+{
+	
+	static void add()
+	{
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter 1st Num : ");
+		Integer a = Integer.parseInt(sc.nextLine());
+		
+		System.out.println("Enter 2nd Num : ");
+		Integer b = Integer.parseInt(sc.nextLine());
+		
+		System.out.println("The Sum : "+(a+b));
+	}
+	
+	static void printChar()
+	{
+		System.out.println("Print Char Started");
+		for(int i=65;i<=70;i++)
+		{
+			try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			System.out.println((char)i);
+		}
+		
+		System.out.println("Print Char Ended");
+	}
+	
+	static void printNum()
+	{
+		
+		System.out.println("Print Num Started");
+		for(int i=1;i<=5;i++)
+		{
+			try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			System.out.println(i);
+		}
+		
+		System.out.println("Print Num Ended");
+	}
+}
+
+public class Demo {
+	public static void main(String[] args) {
+				Test.add();
+				Test.printChar();
+				Test.printNum();
+				
+	}
+}
